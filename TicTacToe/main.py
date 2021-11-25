@@ -109,92 +109,176 @@ while game_over == 0:
             decision = str(cpu_Decision)
 
 
-
     available_tile.append(str(cpu_Decision))
     print("cpu decision " + str(cpu_Decision))
 
-    for decisions in cpu_Decision:
-        if decisions == 1:
-            replaced_first_row = first_Row.replace("1", "O")
-            print("\n" + replaced_first_row)
-            print(divider)
-            print(second_Row)
-            print(divider)
-            print(third_Row)
-            first_Row = replaced_first_row
-            cpu_has_decided.append(cpu_Decision)
-        if decisions == 2:
-            replaced_first_row = first_Row.replace("2", "O")
-            print("\n" + replaced_first_row)
-            print(divider)
-            print(second_Row)
-            print(divider)
-            print(third_Row)
-            first_Row = replaced_first_row
-            cpu_has_decided.append(cpu_Decision)
-        if decisions == 3:
-            replaced_first_row = first_Row.replace("3", "O")
-            print("\n" + replaced_first_row)
-            print(divider)
-            print(second_Row)
-            print(divider)
-            print(third_Row)
-            first_Row = replaced_first_row
-            cpu_has_decided.append(cpu_Decision)
-        if decisions == 4:
-            replaced_second_row = second_Row.replace("4", "O")
-            print(first_Row)
-            print(divider)
-            print("\n" + replaced_second_row)
-            print(divider)
-            print(third_Row)
-            second_Row = replaced_second_row
-            cpu_has_decided.append(cpu_Decision)
-        if decisions == 5:
-            replaced_second_row = second_Row.replace("5", "O")
-            print(first_Row)
-            print(divider)
-            print("\n" + replaced_second_row)
-            print(divider)
-            print(third_Row)
-            second_Row = replaced_second_row
-            cpu_has_decided.append(cpu_Decision)
-        if decisions == 6:
-            replaced_second_row = second_Row.replace("6", "O")
-            print(first_Row)
-            print(divider)
-            print("\n" + replaced_second_row)
-            print(divider)
-            print(third_Row)
-            second_Row = replaced_second_row
-            cpu_has_decided.append(cpu_Decision)
-        if decisions == 7:
-            replaced_third_row = third_Row.replace("7", "O")
-            print(first_Row)
-            print(divider)
-            print(second_Row)
-            print(divider)
-            print("\n" + replaced_third_row)
-            third_Row = replaced_third_row
-            cpu_has_decided.append(cpu_Decision)
-        if decisions == 8:
-            replaced_third_row = third_Row.replace("8", "O")
-            print(first_Row)
-            print(divider)
-            print(second_Row)
-            print(divider)
-            print("\n" + replaced_third_row)
-            third_Row = replaced_third_row
-            cpu_has_decided.append(int(cpu_Decision))
-        if decisions == 9:
-            replaced_third_row = third_Row.replace("9", "O")
-            print(first_Row)
-            print(divider)
-            print(second_Row)
-            print(divider)
-            print("\n" + replaced_third_row)
-            third_Row = replaced_third_row
-            cpu_has_decided.append(int(cpu_Decision))
+    if number_of_elements > 1:
+        if int(cpu_Decision[0]) < 10:
+            if int(cpu_Decision[0]) == 1:
+                replaced_first_row = first_Row.replace("1", "O")
+                first_Row = replaced_first_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision[0]))
+            if int(cpu_Decision[0]) == 2:
+                replaced_first_row = first_Row.replace("2", "O")
+                first_Row = replaced_first_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision[0]))
+            if int(cpu_Decision[0]) == 3:
+                replaced_first_row = first_Row.replace("3", "O")
+                first_Row = replaced_first_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision[0]))
+            if int(cpu_Decision[0]) == 4:
+                replaced_second_row = second_Row.replace("4", "O")
+                second_Row = replaced_second_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision[0]))
+            if int(cpu_Decision[0]) == 5:
+                replaced_second_row = second_Row.replace("5", "O")
+                second_Row = replaced_second_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision[0]) == 6:
+                replaced_second_row = second_Row.replace("6", "O")
+                second_Row = replaced_second_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision[0]))
+            if int(cpu_Decision[0]) == 7:
+                replaced_third_row = third_Row.replace("7", "O")
+                third_Row = replaced_third_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision[0]))
+            if int(cpu_Decision[0]) == 8:
+                replaced_third_row = third_Row.replace("8", "O")
+                third_Row = replaced_third_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision[0]))
+            if int(cpu_Decision[0]) == 9:
+                replaced_third_row = third_Row.replace("9", "O")
+                third_Row = replaced_third_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision[0]))
+
+    else:
+        if int(cpu_Decision) < 10:
+            if int(cpu_Decision) == 1:
+                replaced_first_row = first_Row.replace("1", "O")
+                first_Row = replaced_first_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision) == 2:
+                replaced_first_row = first_Row.replace("2", "O")
+                first_Row = replaced_first_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision) == 3:
+                replaced_first_row = first_Row.replace("3", "O")
+                first_Row = replaced_first_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision) == 4:
+                replaced_second_row = second_Row.replace("4", "O")
+                second_Row = replaced_second_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision) == 5:
+                replaced_second_row = second_Row.replace("5", "O")
+                second_Row = replaced_second_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision) == 6:
+                replaced_second_row = second_Row.replace("6", "O")
+                second_Row = replaced_second_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision) == 7:
+                replaced_third_row = third_Row.replace("7", "O")
+                third_Row = replaced_third_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision) == 8:
+                replaced_third_row = third_Row.replace("8", "O")
+                third_Row = replaced_third_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
+            if int(cpu_Decision) == 9:
+                replaced_third_row = third_Row.replace("9", "O")
+                third_Row = replaced_third_row
+                print(first_Row)
+                print(divider)
+                print(second_Row)
+                print(divider)
+                print(third_Row)
+                cpu_has_decided.append(int(cpu_Decision))
 
     print("\nPlayer Choices: " + str(player_has_decided))
     print("Cpu Choices: "+str(cpu_has_decided))

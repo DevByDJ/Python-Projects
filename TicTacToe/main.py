@@ -1,4 +1,35 @@
 import random
+import pygame
+import os
+import time
+
+WIDTH, HEIGHT = 750, 750
+WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("TIC TAC TOE")
+
+TTT_BOARD_IMAGE = pygame.image.load(os.path.join('Assets', 'board_0.png'))
+WHITE = (255, 255, 255)
+
+def main():
+    run = True
+    FPS = 60
+    clock = pygame.time.Clock()
+
+    def redraw_window():
+        WIN.fill(WHITE)
+        WIN.blit(TTT_BOARD_IMAGE, (175, 175))
+        pygame.display.update()
+
+    while run:
+        clock.tick(FPS)
+        redraw_window()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+main()
+
+
 first_Row = "   1   |    2    |   3   "
 second_Row = "   4   |    5    |   6   "
 third_Row = "   7   |    8    |   9   "
@@ -19,16 +50,15 @@ cpu_has_decided = []
 available_tile = []
 
 winning_combo_1 = ["1", "2", "3"]
-winning_combo_2 = [1, 4, 7]
-winning_combo_3 = [1, 5, 9]
-winning_combo_4 = [2, 5, 8]
-winning_combo_5 = [3, 5, 7]
-winning_combo_6 = [3, 6, 9]
-winning_combo_7 = [4, 5, 6]
-winning_combo_8 = [7, 8, 9]
+winning_combo_2 = ["1", "4", "7"]
+winning_combo_3 = ["1", "5", "9"]
+winning_combo_4 = ["2", "5", "8"]
+winning_combo_5 = ["3", "5", "7"]
+winning_combo_6 = ["3", "6", "9"]
+winning_combo_7 = ["4", "5", "6"]
+winning_combo_8 = ["7", "8", "9"]
 
-winning_combo_list = [winning_combo_1, winning_combo_2, winning_combo_3, winning_combo_4, winning_combo_5,
-                      winning_combo_6, winning_combo_7, winning_combo_8]
+winning_combo_list = []
 
 
 while game_over == 0:
@@ -89,23 +119,36 @@ while game_over == 0:
             third_Row = replaced_third_row
             player_has_decided.append(player_Decision)  # Creates a list that stores the previous player decisions
 
+    if winning_combo_1.count(player_has_decided) > 1:
+        def Cloning(winning_combo_1):
+            winning_combo_list_copy = winning_combo_1[:]
+            return winning_combo_list_copy
+
+        winning_combo_list = Cloning(winning_combo_1)
+        print(winning_combo_list)
+    if winning_combo_2.count(player_has_decided) > 2:
+        def Cloning(winning_combo_2):
+            winning_combo_list_copy = winning_combo_2[:]
+            return winning_combo_list_copy
+
+        winning_combo_list = Cloning(winning_combo_2)
+        print(winning_combo_list)
+
     while decision in available_tile:
         number_of_elements = len(player_has_decided)
         if number_of_elements > 1:
-            print(winning_combo_1)
+            print(winning_combo_list)
             print(player_has_decided)
-            res = [ele for ele in winning_combo_1]
-            for a in winning_combo_1:
+            res = [ele for ele in winning_combo_list]
+            for a in winning_combo_list:
                 if a in player_has_decided:
                     res.remove(a)
             cpu_Decision = res
             decision = cpu_Decision
 
         else:
-            random_num = random.randint(0, 7)
-            winning_combo_choice = winning_combo_list[random_num]
-            winning_element = random.choice(winning_combo_choice)
-            cpu_Decision = winning_element
+            random_num = random.randint(0, 9)
+            cpu_Decision = random_num
             decision = str(cpu_Decision)
 
 
